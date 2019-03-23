@@ -23,8 +23,8 @@ Invoke-RestMethod -Method Post -Uri $submitUri -Body '{ approved: true, approver
 
 ### Flows to test:
 
-[x] Timeout
-[x] Approved
-[x] Same approver submits many
-[x] Race condition - should be fixed in [v1.8.0](https://github.com/Azure/azure-functions-durable-extension/releases/tag/v1.8.0)
-[x] Approval rejected (also allows same user to send a reject after initally approving)
+- Timeout
+- Approved
+- Same approver submits more than one (their vote should only be counted once)
+- Race condition (we should not miss any votes) - should be fixed in [v1.8.0](https://github.com/Azure/azure-functions-durable-extension/releases/tag/v1.8.0)
+- Approval rejected (also allows same user to send a reject after initally approving)

@@ -53,6 +53,7 @@ namespace DurableFunctionsMultipleApprovals
             return new OkObjectResult(status);
         }
         const string ApprovalResultEventName = "ApprovalResult";
+
         [FunctionName(nameof(GetApprovalOrchestrator))]
         public static async Task<string> GetApprovalOrchestrator([OrchestrationTrigger]
             DurableOrchestrationContextBase ctx, ILogger log)
